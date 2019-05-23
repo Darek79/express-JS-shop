@@ -1,5 +1,50 @@
-*{
+* {
     margin: 0;
-    padding:0;
+    padding: 0;
     box-sizing: border-box;
+
+}
+html {
+    font-family: 'Russo One', sans-serif;
+}
+
+@media only screen and (max-width:600px) {
+    body {
+        background-color: green;
+      
+    }
+
+    .header {
+        grid-area: header;
+        background-color: blue;
+      
+    }
+    .content {
+        grid-area: content;
+        background-color: red;
+       
+    }
+    .footer {
+        grid-area: footer;
+        background-color: gold;
+       
+    }
+    .test{
+        width:75%;
+        height: 50%;
+        background-color: black;
+    }
+    .wrapper {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 25% 20%  auto ;
+        grid-template-rows: 10%  200%  10%;
+        grid-template-areas: 
+
+        "header header header "
+        "content content  . "
+        "footer footer . "
+    }
+   
+
 }
