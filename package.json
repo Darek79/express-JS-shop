@@ -2,7 +2,7 @@
   "name": "dk_weatherAPP",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,14 +10,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^5.16.0",
+    "lodash": "^4.17.11",
+    "reload": "^3.0.1"
   },
   "dependencies": {
     "animejs": "^3.0.1",
     "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "express": "^4.17.0",
-    "helmet": "^3.18.0",
-    "lodash": "^4.17.11"
+    "helmet": "^3.18.0"
   }
 }

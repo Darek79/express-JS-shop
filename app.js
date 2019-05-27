@@ -1,4 +1,6 @@
 const express = require("express");
+const reload = require("reload");
+const http = require("http");
 const helmet = require("helmet");
 
 require('dotenv').config();
@@ -19,5 +21,11 @@ app.set("view engine","ejs");
 
 app.use(appRoutes);
 
-app.listen(port);
+let server = http.createServer(app);
+
+reload(app).then(()=> {
+    server.listen(port)
+  }).catch((err)=> {
+    if (err) throw err;
+  });
 
