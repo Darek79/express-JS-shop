@@ -21,8 +21,5 @@ const anime = require('animejs/lib/anime.js');
 //     });
 // };
 
-export function test(){
-    console.log("here")
-};
 
 

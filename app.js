@@ -6,6 +6,7 @@ const helmet = require("helmet");
 require('dotenv').config();
 
 const appRoutes = require("./routes/routes");
+const adminRoutes = require("./routes/adminRoute");
 
 const app = express();
 app.use(helmet());
@@ -17,12 +18,19 @@ app.use(express.static("public"));
 
 app.set("view engine","ejs");
 
+
+app.use(adminRoutes);
 app.use(appRoutes);
 
-const server = http.createServer(app);
-server.listen(port);
 
-reload(app);
+
+
+app.listen(port);
+
+// const server = http.createServer(app);
+// server.listen(3000);
+
+// reload(app);
 
 // reload(app).then(()=> {
     

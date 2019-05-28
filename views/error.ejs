@@ -1,54 +1,55 @@
 <%- include("./includes/head.ejs") %>
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         text-decoration: none;
-        
-        
-        
-        
     }
-    html{
+
+    html {
         font-family: 'Kodchasan', sans-serif;
     }
 
-    #errorPage{
-    background-color: #EBC1C1;
-    height: 100vh;
-    font-size: 40px;
-    color: rgb(19, 15, 15);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    #errorPage {
+        background-color: #EBC1C1;
+        height: 100vh;
+        font-size: 40px;
+        color: rgb(19, 15, 15);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     @media only screen and (max-width:600px) {
-        #errorPage{
+        #errorPage {
             flex-flow: column wrap;
             font-size: 28px;
-            
+
         }
     }
-  
 
-    #errorPage a{
+
+    #errorPage a {
         text-align: center;
-    color: rgb(225, 225, 255);
-    width: 60%;
-    
-   height: calc(100%-2px);
-   }
-   #errorPage a:hover{
-    background-color: rgb(15, 15, 230);
-}
+        color: rgb(225, 225, 255);
+        width: 60%;
+
+        height: calc(100%-2px);
+    }
+
+    #errorPage a:hover {
+        background-color: rgb(15, 15, 230);
+    }
 </style>
 </head>
+
 <body>
     <div id="errorPage">
         <p>page not available</p>
         <a href="/">return to homepage</a>
     </div>
 </body>
+
 </html>

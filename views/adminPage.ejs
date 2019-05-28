@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+            }
+            input{
+                margin: 5px;
+            }
+            #desc{
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+      <form method="post" action="/prodData" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="title">
+        <input type="number" name="price" placeholder="price">
+        <input id="desc" type="text" name="description" placeholder="description">
+        <input type="file" name="img" />
+        <input type="submit" value="submit">
+      </form>
+        
+       
+    </body>
+</html>
