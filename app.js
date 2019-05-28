@@ -17,15 +17,16 @@ app.use(express.static("public"));
 
 app.set("view engine","ejs");
 
-
-
 app.use(appRoutes);
 
-let server = http.createServer(app);
+const server = http.createServer(app);
+server.listen(port);
 
-reload(app).then(()=> {
-    server.listen(port)
-  }).catch((err)=> {
-    if (err) throw err;
-  });
+reload(app);
+
+// reload(app).then(()=> {
+    
+//   }).catch((err)=> {
+//     if (err) throw err;
+//   });
 

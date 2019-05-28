@@ -12,6 +12,7 @@
     "watch": [
       "app.js",
       "views/home.ejs",
+      "views/error.ejs",
       "public/style/main.css"
     ],
     "env": {
