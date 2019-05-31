@@ -1,7 +1,11 @@
 const express = require("express");
 const reload = require("reload");
 const http = require("http");
+const multer = require("multer");
 const helmet = require("helmet");
+const path = require("path");
+const imgP = path.join(__dirname,"katalog","img");
+console.log(imgP);
 
 require('dotenv').config();
 
@@ -14,6 +18,17 @@ app.use(helmet());
 const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({extended:false}));
+
+const storage = multer.diskStorage({
+  destination: (req,file,cb)=>{
+      cb(null,imgP)
+  },
+  filename: (req,file,cb)=>{
+      cb(null,file.fieldname+ "-" + Date.now())
+  }
+}); 
+app.use(multer({storage:storage}).single("img"));
+
 app.use(express.static("public"));
 
 app.set("view engine","ejs");
@@ -25,16 +40,16 @@ app.use(appRoutes);
 
 
 
-app.listen(port);
+// app.listen(port);
 
-// const server = http.createServer(app);
-// server.listen(3000);
+const server = http.createServer(app);
+server.listen(3000);
 
 // reload(app);
 
-// reload(app).then(()=> {
+reload(app).then(()=> {
     
-//   }).catch((err)=> {
-//     if (err) throw err;
-//   });
+  }).catch((err)=> {
+    if (err) throw err;
+  });
 

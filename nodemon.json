@@ -13,10 +13,12 @@
       "app.js",
       "views/home.ejs",
       "views/error.ejs",
+      "routes/adminRoute.js",
+      "routes/routes.js",
       "public/style/main.css"
     ],
     "env": {
       "NODE_ENV": "development"
     },
-    "ext": "js json ejs"
+    "ext": "js json ejs css"
   }

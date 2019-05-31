@@ -1,51 +1,36 @@
 const express = require('express');
-const app = express();
 const router = express.Router();
 const multer = require("multer");
+const path = require("path");
 const fs = require("fs");
-const upload = upload.single("img");
+const katalogData = require("../models/readingServingData");
+// const upload = upload.single("img");
+
+//path declaration where to save data
+const p = path.join(__dirname,"..","katalog","data.json");
+const imgP = path.join(__dirname,"..","katalog","img");
+
 
 
 
 router.get("/admin",(req,res)=>{
-    
-    res.render("adminPage");
+        
+        res.render("adminPage");
+
 });
 
 
 
-router.post("/prodData",upload,async(req,res)=>{
-    const title = await req.body.title;
-    const price = await req.body.price;
-    const desc = await req.body.description;
+router.post("/prodData",(req,res)=>{
+    const title = req.body.title;
+    const price = req.body.price;
+    const desc = req.body.desc;
+    const imgURL = req.file.path;
 
-    const img = await fs.readFileSync(req.file.path);
-    const encodeIMG = img.toString("base64");
-    const fileName = await req.file.filetype;
-    const contentType = await req.file.mimetype
-    const image =  await Buffer.from(encodeIMG,"base64");
+    console.log(title,price,desc,imgURL);
 
-
-    const descFile = await {
-        title,
-        price,
-        desc,
-        img : {
-            fileName,
-            contentType,
-            image
-        }
-    };
-
-    const itemData = Buffer.from(descFile);
-    const json = await JSON.stringify(itemData);
-
-
-
-(async()=>{
-    console.log(await json);
-})();
-    
+    const getData = new katalogData(title,price,desc,imgURL);
+    getData.saveData();
 
     res.redirect("/admin");
 })
