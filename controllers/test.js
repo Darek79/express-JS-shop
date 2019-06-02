@@ -1,4 +1,11 @@
-var string = "D:\\dk_weatherAPP\\public\\img\\FP021E04Z-A11_1559477163889"
-let str = string.slice(23,56);
+const getData = require("./readingServingData");
 
-console.log(str)
+const data = await getData.readingData();
+    
+ 
+
+const arr = [];
+
+data.forEach((val)=>{
+    console.log(val.imgDetails[0].path);
+})

@@ -1,11 +1,22 @@
 <div id="carusselImg">
-    <% if(slideImg.length > 0) {%>
-    <% slideImg.forEach((val)=> { %>
-    <a href="#"><img src="<%=val.path %>" alt="<%=val.name %>"></a>
+    <% if(slidePics.length > 0) {%>
+    <% slidePics.forEach((val)=> { %>
+   
+        <a href="#"><img class ="cImg"src="<%=val.path %>" alt="<%=val.name %>"></a>
+
     <% }) %>
     <% } else {%>
         <h1>will be back soon</h1>
     <% } %>
+</div>
+<div id="ProdImg">
+    <% if(prodPics.length > 0) {%>
+        <% prodPics.forEach((val)=> { %>
+        <a href="#"class="prodL"><img class="prodImg" src="<%=val.path %>" alt="<%=val.name %>"></a>
+        <% }) %>
+        <% } else {%>
+            <h1>will be back soon</h1>
+        <% } %>
 </div>
 
 
