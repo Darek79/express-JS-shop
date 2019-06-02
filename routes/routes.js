@@ -1,11 +1,9 @@
 
 const express = require('express');
 const router = express.Router();
+const imgDisplay = require("../controllers/frontPagePics");
 
-router.get("/",(req,res)=>{
-    
-    res.render("home");
-});
+router.get("/",imgDisplay.loadFrontPics);
 
 
 

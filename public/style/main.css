@@ -84,11 +84,35 @@ html {
     grid-area: content;
     background-color: #EBC1C1;
   }
+  .content #carusselImg {
+    margin-top: 1%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    height: 80vh;
+    width: 500%;
+  }
+  .content #carusselImg a {
+    width: 100%;
+    height: 100%;
+  }
+  .content #carusselImg a img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   .footer {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: footer;
     background-color: #EBC1C1;
+  }
+  #errorPage {
+    background-color: black !important;
+    height: 100vh;
+    font-size: 20px;
   }
   .wrapper {
     height: 100vh;

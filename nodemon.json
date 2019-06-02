@@ -15,6 +15,7 @@
       "views/error.ejs",
       "routes/adminRoute.js",
       "routes/routes.js",
+      "controllers/frontPagePics.js",
       "public/style/main.css"
     ],
     "env": {

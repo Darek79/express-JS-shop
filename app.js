@@ -24,10 +24,11 @@ const storage = multer.diskStorage({
       cb(null,imgP)
   },
   filename: (req,file,cb)=>{
-      cb(null,file.fieldname+ "-" + Date.now())
+    let imgName = file.originalname.substr(0,13);
+      cb(null,imgName+ "_" + Date.now());
   }
 }); 
-app.use(multer({storage:storage}).single("img"));
+app.use(multer({storage:storage}).array("img",8));
 
 app.use(express.static("public"));
 

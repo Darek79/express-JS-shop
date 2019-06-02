@@ -1,0 +1,11 @@
+<div id="carusselImg">
+    <% if(slideImg.length > 0) {%>
+    <% slideImg.forEach((val)=> { %>
+    <a href="#"><img src="<%=val.path %>" alt="<%=val.name %>"></a>
+    <% }) %>
+    <% } else {%>
+        <h1>will be back soon</h1>
+    <% } %>
+</div>
+
+

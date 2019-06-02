@@ -29,9 +29,12 @@
     <body>
       <form method="post" action="/prodData" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="title">
+        <input type="text" name="sizes" placeholder="sizes">
+        <input type="text" name="brand" placeholder="brand">
+        <input type="text" name="colors" placeholder="colors">
         <input type="number" name="price" placeholder="price" step="0.01">
         <input id="desc" type="text" name="desc" placeholder="description">
-        <input type="file" name="img" />
+        <input type="file" name="img" multiple>
         <input type="submit" value="submit"> 
       </form>
         
