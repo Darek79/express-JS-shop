@@ -16,6 +16,8 @@
       "routes/adminRoute.js",
       "routes/routes.js",
       "controllers/frontPagePics.js",
+      "controllers/productPageB.js",
+      "controllers/productPageC.js",
       "public/style/main.css"
     ],
     "env": {

@@ -12,102 +12,81 @@ html {
 }
 
 @media only screen and (max-width: 600px) {
-  body {
+  .header {
+    width: 100vw;
+    height: 10vh;
     background-color: #EBC1C1;
   }
-  .header {
+  .header #headerWrapper {
     width: 100%;
     height: 100%;
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: header;
-    background-color: #EBC1C1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  .header #searchInp {
+  .header #headerWrapper .formWrapper {
+    border-bottom: 2px solid rgba(33, 33, 33, 0.9);
+  }
+  .header #headerWrapper .formWrapper .homeForm #searchInp {
+    outline: none;
+    text-align: center;
     border: 2px solid #EBC1C1;
     background-color: #EBC1C1;
-    text-align: center;
-    outline: none;
-    border-bottom: 2px solid black !important;
-  }
-  .header ::-webkit-input-placeholder {
-    font-family: 'Kodchasan', sans-serif;
-  }
-  .header :-ms-input-placeholder {
-    font-family: 'Kodchasan', sans-serif;
-  }
-  .header ::-ms-input-placeholder {
-    font-family: 'Kodchasan', sans-serif;
-  }
-  .header ::placeholder {
-    font-family: 'Kodchasan', sans-serif;
   }
   .categories {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: categories;
-    width: 150vw;
+    width: 100vw;
+    height: 5vh;
+    background-color: #EBC1C1;
+    overflow: hidden;
   }
   .categories #catWrapper {
+    background-color: #EBC1C1;
+    width: 120%;
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    overflow: hidden;
   }
   .categories #catWrapper a {
-    color: black;
+    margin: auto;
   }
-  .content {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    grid-area: content;
-    background-color: #EBC1C1;
+  .carussel {
+    width: 100vw;
+    height: 80vh;
   }
-  .content #carusselImg {
-    margin-top: 1%;
+  .carussel #carusselImg {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
-    height: 80vh;
-    width: 100vw;
-    font-size: 0;
-  }
-  .content #carusselImg .cImg {
     height: 100%;
+  }
+  .carussel #carusselImg a {
+    width: 100%;
+    height: 100%;
+  }
+  .carussel #carusselImg a > img {
     width: 100vw;
+    height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .content1 {
-    -ms-grid-row: 4;
-    -ms-grid-column: 1;
-    grid-area: content1;
-    background-color: #EBC1C1;
-    font-size: 0;
+  .prodImgWrapper {
+    width: 100vw;
+    height: 80vh;
   }
-  .content1 #ProdImg {
+  .prodImgWrapper #ProdImg {
+    width: 100%;
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -116,35 +95,15 @@ html {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .content1 #ProdImg .prodL {
-    height: 0 !important;
+  .prodImgWrapper #ProdImg a {
+    width: 100%;
+    height: 100%;
   }
-  .content1 #ProdImg .prodImg {
-    -o-object-fit: contain;
-       object-fit: contain;
-    height: 100vh;
+  .prodImgWrapper #ProdImg a > img {
     width: 100vw;
-  }
-  .footer {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    grid-area: footer;
-    background-color: #EBC1C1;
-  }
-  #errorPage {
-    background-color: black !important;
-    height: 100vh;
-    font-size: 20px;
-  }
-  .wrapper {
-    height: 100vh;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
-    -ms-grid-rows: 8% 3% 200vh 200vh 10%;
-        grid-template-rows: 8% 3% 200vh 200vh 10%;
-        grid-template-areas: "header" "categories" "content" "content1" "footer";
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 /*# sourceMappingURL=main.css.map */

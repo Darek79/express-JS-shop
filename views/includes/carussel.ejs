@@ -1,0 +1,14 @@
+<div id="carusselImg">
+    <% if(slidePics.length > 0) {%>
+    <% slidePics.forEach((val)=> { %>
+   
+        <a href="<%= prodPageC %>/<%= val.title %>"><img class ="cImg"src="<%=val.path %>" alt="<%=val.name %>" data-set="<%= val.title %>"></a>
+
+    <% }) %>
+    <% } else {%>
+        <h1>will be back soon</h1>
+    <% } %>
+</div>
+
+
+
