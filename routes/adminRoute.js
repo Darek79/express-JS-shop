@@ -1,4 +1,5 @@
 const express = require('express');
+const app = express();
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
@@ -16,8 +17,9 @@ router.get("/admin",(req,res)=>{
 });
 
 
-
 router.post("/prodData",(req,res)=>{
+   
+    const pathOpt = req.body.prod;
     const title = req.body.title;
     const sizes = req.body.sizes
     const brand = req.body.brand;
@@ -27,11 +29,13 @@ router.post("/prodData",(req,res)=>{
     const imgURL = req.files;
 
     // console.log(title,sizes,brand,colors,price,desc,imgURL);
-
-    const getData = new katalogData(title,sizes,brand,colors,price,desc,imgURL);
+    // app.get("pathNr"),
+    const getData = new katalogData(pathOpt,title,sizes,brand,colors,price,desc,imgURL);
     getData.saveData();
 
     res.redirect("/admin");
-})
+});
+
+
 
 module.exports = router;

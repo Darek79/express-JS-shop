@@ -1,7 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const dataPath = path.join(__dirname,"..","katalog","ProductData.json");
+const prodPath = path.join(__dirname,"..","katalog","ProductData.json");
+const carusselPath = path.join(__dirname,"..","katalog","carusselData.json");
 
+// const dataPath = dataPath === 1?prodPath:carusselPath;
+// console.log(dataPath);
 // const title = req.body.title;
 // const sizes = req.body.sizes
 // const brand = req.body.brand;
@@ -12,7 +15,8 @@ const dataPath = path.join(__dirname,"..","katalog","ProductData.json");
 
 
 module.exports = class ReadingSavingData {
-    constructor(t,s,b,c,p,d,u){
+    constructor(opt,t,s,b,c,p,d,u){
+        this.opt = opt;
         this.t = t;
         this.s = s;
         this.b = b;
@@ -20,13 +24,15 @@ module.exports = class ReadingSavingData {
         this.p = p;
         this.d = d;
         this.u = u;
+       
     }
 
-    static async readingData(){
-        
+    static async readingData(param){
+
         return new Promise((res,rej)=>{
-            if(fs.existsSync(dataPath)){
-                fs.readFile(dataPath,"utf8",(err,data)=>{
+            
+            if(fs.existsSync(param)){
+                fs.readFile(param,"utf8",(err,data)=>{
                     res(JSON.parse(data));
                 });
             }else {
@@ -36,15 +42,16 @@ module.exports = class ReadingSavingData {
     }
 
     async saveData(){
-        const stream = await ReadingSavingData.readingData();
+        const param = this.opt === "prod"?prodPath:carusselPath;
+        const stream = await ReadingSavingData.readingData(param);
 
         const katalogData = await{
-            title: this.t,
+            title: this.t.split(","),
             sizes: this.s.split(","),
-            brand: this.b,
+            brand: this.b.split(","),
             colors: this.c.split(","),
-            price: this.p,
-            description: this.d,
+            price: this.p.split(","),
+            description: this.d.split(","),
             imgDetails: []
                     
         }
@@ -63,8 +70,9 @@ module.exports = class ReadingSavingData {
         // const finalStream = await fs.createWriteStream(dataPath,stream);
         // stream.pipe(finalStream);
         return new Promise((res,rej)=>{
-            fs.writeFile(dataPath,JSON.stringify(stream),(err)=>{
+            fs.writeFile(param,JSON.stringify(stream),(err)=>{
                 if(err) throw err;
+                console.log(param);
                 res(console.log("saved"));
             });
         });

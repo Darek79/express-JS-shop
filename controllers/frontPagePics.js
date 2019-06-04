@@ -1,8 +1,19 @@
-const getData = require("./readingServingData");
+const fs = require("fs");
+const path = require("path");
+const util = require("util");
+const prodPath = path.join(__dirname,"..","katalog","ProductData.json");
+
 
 exports.loadFrontPics = async(req,res)=>{
-    const data = await getData.readingData();
-    
+
+    const dataRead = util.promisify(fs.readFile);
+
+    const fileRead =async()=>{
+        const data= await dataRead(prodPath,"utf8");
+        return JSON.parse(data);
+    }
+    const data = await fileRead();
+
     const prodPics = await data.map((val,i)=>{
         if(i <= 4){
             return {

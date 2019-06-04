@@ -4,7 +4,7 @@ const http = require("http");
 const multer = require("multer");
 const helmet = require("helmet");
 const path = require("path");
-const imgP = path.join(__dirname,"katalog","img");
+const imgP = path.join(__dirname,"public","img");
 console.log(imgP);
 
 require('dotenv').config();
