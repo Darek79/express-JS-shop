@@ -1,18 +1,30 @@
-const getData = require("./readingServingData");
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
+const util = require("util");
+
+const p = path.join(__dirname,"..","katalog","carusselData.json");
 
 exports.productPageC =async(req,res)=>{
-    const prodTitle = req.params.title;
-    console.log(prodTitle);
-    // const data = await getData.readingData();
-    // console.log(data[5])
-    // const slidePics = await data[5].map((val,i)=>{       console.log(val)
-    //     return  {
-    //          path: val.path.slice(23,56),
-    //          name: val.path.substring(29,45),
-    //          ind: i
-    //      }
-    //  });
-
-    res.redirect("/")
+    const t = req.params.title;
+    const ind = req.params.ind;
     
+    const readData = util.promisify(fs.readFile);
+
+    const readJSON =async()=>{
+        const data = await readData(p,"utf8");
+        const processData = JSON.parse(data);
+        return new Promise((res,rej)=>{      
+            res(processData[ind]);
+        })
+    }
+    const prodData = await readJSON();
+   
+    const title = prodData.title;
+    const sizes = prodData.sizes;
+    const brand = prodData.brand;
+    const price = prodData.price;
+    const imgDetails =prodData.imgDetails;
+
+    res.render("productPage",{title,sizes,brand,price,imgDetails});
 }

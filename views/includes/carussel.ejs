@@ -2,7 +2,7 @@
     <% if(slidePics.length > 0) {%>
     <% slidePics.forEach((val)=> { %>
    
-        <a href="<%= prodPageC %>/<%= val.title %>"><img class ="cImg"src="<%=val.path %>" alt="<%=val.name %>" data-set="<%= val.title %>"></a>
+        <a href="<%= prodPageC %>/<%= val.title %>/<%= val.ind %>"><img class ="cImg"src="<%=val.path %>" alt="<%=val.name %>" data-set="<%= val.title %>"></a>
 
     <% }) %>
     <% } else {%>

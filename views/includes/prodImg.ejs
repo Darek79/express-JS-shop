@@ -1,7 +1,7 @@
 <div id="ProdImg">
     <% if(prodPics.length > 0) {%>
         <% prodPics.forEach((val)=> { %>
-        <a href="<%= prodPage%>/<%= val.title %>"class="prodL"><img class="prodImg" src="<%=val.path %>" alt="<%=val.name %>" data-set="<%= val.title %>"></a>
+        <a href="<%= prodPage%>/<%= val.title %>/<%= val.ind %>"class="prodL"><img class="prodImg" src="<%=val.path %>" alt="<%=val.name %>" data-set="<%= val.title %>"></a>
         <% }) %>
         <% } else {%>
             <h1>will be back soon</h1>

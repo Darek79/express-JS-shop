@@ -3,17 +3,6 @@ const path = require("path");
 const prodPath = path.join(__dirname,"..","katalog","ProductData.json");
 const carusselPath = path.join(__dirname,"..","katalog","carusselData.json");
 
-// const dataPath = dataPath === 1?prodPath:carusselPath;
-// console.log(dataPath);
-// const title = req.body.title;
-// const sizes = req.body.sizes
-// const brand = req.body.brand;
-// const colors = req.body.colors;
-// const price = req.body.price;
-// const desc = req.body.desc;
-// const imgURL = req.file.path;
-
-
 module.exports = class ReadingSavingData {
     constructor(opt,t,s,b,c,p,d,u){
         this.opt = opt;
@@ -23,8 +12,7 @@ module.exports = class ReadingSavingData {
         this.c = c;
         this.p = p;
         this.d = d;
-        this.u = u;
-       
+        this.u = u;     
     }
 
     static async readingData(param){
@@ -72,7 +60,6 @@ module.exports = class ReadingSavingData {
         return new Promise((res,rej)=>{
             fs.writeFile(param,JSON.stringify(stream),(err)=>{
                 if(err) throw err;
-                console.log(param);
                 res(console.log("saved"));
             });
         });
