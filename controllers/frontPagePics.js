@@ -43,7 +43,7 @@ exports.loadFrontPics = async (req, res) => {
             ind: i
         }
     });
-
+    
     res.render("home", {
         slidePics,
         prodPics,

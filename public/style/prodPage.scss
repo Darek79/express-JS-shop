@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    
+  }
+  
+  html {
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 13px;
+  }
+
+  @media only screen and (max-width:600px) {
+
+
+    #ThumbPicWrapper{
+        display:none;
+    }
+
+    .header{
+        width: 100vw;
+        height: 10vh;
+        background-color: #EBC1C1;
+
+            #headerWrapper{
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                .formWrapper{
+                    border-bottom: 2px solid rgba(33,33,33,0.9);
+                    
+                    .homeForm{
+                       
+                        #searchInp{
+                            outline: none;
+                            text-align: center;
+                            border: 2px solid #EBC1C1;
+                            background-color: #EBC1C1;
+                        }
+                    }
+
+                }
+
+            }
+}
+
+    #mPicWrapper{
+        height: 60vh;
+        width: 100%;
+        background-color: blueviolet;
+    }
+    #listWrapper{
+        height: 30vh;
+        width: 100%;
+        background-color: green;
+    }
+
+  }

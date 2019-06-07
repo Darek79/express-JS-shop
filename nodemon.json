@@ -19,7 +19,8 @@
       "controllers/productPageB.js",
       "controllers/productPageC.js",
       "public/style/main.css",
-      "controllers/readingServingData.js"
+      "controllers/readingServingData.js",
+      "views/productPage.ejs"
     ],
     "env": {
       "NODE_ENV": "development"

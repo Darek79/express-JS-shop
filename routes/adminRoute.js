@@ -28,8 +28,6 @@ router.post("/prodData",(req,res)=>{
     const desc = req.body.desc;
     const imgURL = req.files;
 
-    // console.log(title,sizes,brand,colors,price,desc,imgURL);
-    // app.get("pathNr"),
     const getData = new katalogData(pathOpt,title,sizes,brand,colors,price,desc,imgURL);
     getData.saveData();
 

@@ -3,9 +3,9 @@ const reload = require("reload");
 const http = require("http");
 const multer = require("multer");
 const helmet = require("helmet");
+const fs = require("fs");
 const path = require("path");
 const imgP = path.join(__dirname,"public","img");
-console.log(imgP);
 
 require('dotenv').config();
 
@@ -34,23 +34,13 @@ app.use(express.static("public"));
 
 app.set("view engine","ejs");
 
-
 app.use(adminRoutes);
 app.use(appRoutes);
 
-
-
-
-// app.listen(port);
-
 const server = http.createServer(app);
-server.listen(3000);
+server.listen(port);
 
-// reload(app);
+// app.listen(3000);
 
-reload(app).then(()=> {
-    
-  }).catch((err)=> {
-    if (err) throw err;
-  });
+
 
