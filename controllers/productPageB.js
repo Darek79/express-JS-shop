@@ -12,19 +12,19 @@ exports.productPageB = async (req, res) => {
         const getData = async () => {
         const data = await readData(prodPath, "utf8");
         const dataJSON = await JSON.parse(data);
-        return Promise.resolve(dataJSON[ind]) ;
+        return Promise.resolve([dataJSON[ind]]) ;
                    
     }
 
     const prodData = await getData();
-    // const title = await prodData.title;
-    // const sizes = await prodData.sizes;
-    // const brand = await prodData.brand;
-    // const price = await prodData.price;
-    // const imgDetails = await prodData.imgDetails;
-   const {title}= [{prodData}];
-   console.log(title);
-    // console.log(imgDetails);
+
+    const title = await prodData[0].title;
+    const sizes = await prodData[0].sizes;
+    const brand = await prodData[0].brand;
+    const tprice = await prodData[0].price;
+    const price =  await tprice[0].replace(".",",");
+    const imgDetails = await prodData[0].imgDetails;
+    console.log(title.length);
 
     res.render("productPage", {
         title,

@@ -7,18 +7,14 @@
 }
 
 html {
-  font-family: 'Kodchasan', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 13px;
 }
 
 @media only screen and (max-width: 600px) {
-  #ThumbPicWrapper {
-    display: none;
-  }
   .header {
     width: 100vw;
     height: 10vh;
-    background-color: #EBC1C1;
   }
   .header #headerWrapper {
     width: 100%;
@@ -38,18 +34,81 @@ html {
   .header #headerWrapper .formWrapper .homeForm #searchInp {
     outline: none;
     text-align: center;
-    border: 2px solid #EBC1C1;
-    background-color: #EBC1C1;
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+  }
+  .allwr {
+    margin-left: 5%;
+  }
+  .discWrapper {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .discWrapper h4 {
+    margin-bottom: 2%;
   }
   #mPicWrapper {
-    height: 60vh;
+    height: 80vh;
     width: 100%;
-    background-color: blueviolet;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  #listWrapper {
-    height: 30vh;
+  #mPicWrapper a {
+    width: 100vw;
+    height: 100%;
+  }
+  #mPicWrapper a > img {
+    width: 100vw;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .lookW {
     width: 100%;
-    background-color: green;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .lookW .tWrapper img {
+    width: 20vh;
+    margin-right: 2vw;
+  }
+  .fWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-right: 5%;
+    margin-bottom: 5%;
+  }
+  .fWrapper #listWrapper {
+    outline: none;
+    width: 40vw;
+    border: 1px solid #2E2E2E;
+  }
+  .fWrapper #listWrapper select {
+    height: 6vh;
+    width: 100%;
+    border: 2px solid white;
+  }
+  .fWrapper #addToCart {
+    width: 45vw;
+    background-color: #F15C36;
+  }
+  .fWrapper #addToCart #add {
+    background-color: #F15C36;
+    height: 6vh;
+    width: 100%;
+    outline: none;
+    border: 2px solid #F15C36;
+    font-weight: 900;
+    color: #FFFFFF;
   }
 }
 /*# sourceMappingURL=prodPage.css.map */

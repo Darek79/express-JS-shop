@@ -16,14 +16,23 @@ exports.productPageC = async (req, res) => {
         return Promise.resolve([dataJSON[ind]]);
     }
     const prodData = await readJSON();
+    // console.log(prodData[0].title);
+    // console.log(prodData[0].sizes)
 
-    const title = prodData.title;
-    const sizes = prodData.sizes;
-    const brand = prodData.brand;
-    const price = prodData.price;
-    const imgDetails = prodData.imgDetails;
+
+    const title = await prodData[0].title;
+    const sizes = await prodData[0].sizes;
+    const brand = await prodData[0].brand;
+    const price = await prodData[0].price;
+    const imgDetails =await prodData[0].imgDetails;
+    
+    console.log(title.length);
 
     res.render("productPage", {
-        prodData
+        title,
+        sizes,
+        brand,
+        price,
+        imgDetails
     });
 }
