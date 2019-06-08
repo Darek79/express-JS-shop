@@ -16,7 +16,7 @@ html {
     .header{
         width: 100vw;
         height: 10vh;
-        background-color: #EBC1C1;
+        background-color: #FFFFFF;
 
             #headerWrapper{
                 width: 100%;
@@ -34,8 +34,8 @@ html {
                         #searchInp{
                             outline: none;
                             text-align: center;
-                            border: 2px solid #EBC1C1;
-                            background-color: #EBC1C1;
+                            border: 2px solid #FFFFFF;
+                            background-color: #FFFFFF;
                         }
                     }
 
@@ -47,11 +47,11 @@ html {
     .categories{
         width: 100vw;
         height: 5vh;
-        background-color: #EBC1C1;
+        background-color: #FFFFFF;
         overflow: hidden;
 
             #catWrapper{
-                background-color: #EBC1C1;
+                background-color: #FFFFFF;
                 width: 120%;
                 height: 100%;
                 display: flex;

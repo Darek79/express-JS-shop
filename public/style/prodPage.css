@@ -37,12 +37,12 @@ html {
     border: 2px solid #FFFFFF;
     background-color: #FFFFFF;
   }
-  .allwr {
-    margin-left: 5%;
+  .titleW {
+    width: 50%;
+    margin: 5% 5% 0 5%;
   }
   .discWrapper {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 5%;
   }
   .discWrapper h4 {
     margin-bottom: 2%;
@@ -72,10 +72,10 @@ html {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin: 5%;
   }
   .lookW .tWrapper img {
     width: 20vh;
-    margin-right: 2vw;
   }
   .fWrapper {
     display: -webkit-box;
@@ -84,8 +84,7 @@ html {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin-right: 5%;
-    margin-bottom: 5%;
+    margin: 0 5% 0 5%;
   }
   .fWrapper #listWrapper {
     outline: none;
@@ -109,6 +108,9 @@ html {
     border: 2px solid #F15C36;
     font-weight: 900;
     color: #FFFFFF;
+  }
+  .fWrapper:last-child {
+    margin-bottom: 5%;
   }
 }
 /*# sourceMappingURL=prodPage.css.map */

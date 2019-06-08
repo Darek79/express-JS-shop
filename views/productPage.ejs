@@ -39,25 +39,29 @@
         <div id="mPicWrapper">
                 <a href="#"><img src="<%= imgDetails[0].path.slice(23, 56) %>" alt="#"></a>
             </div>
-            <% title.forEach((val)=>{ %>
-            <div class="lookW allwr">
+            <div class="titleW">
+                    <h2><%=title[0]%></h2>
+            </div>
+            <% brand.forEach((val,i)=>{ %>
+
+            <div class="lookW">
             <div class="tWrapper">
-                <a href="#"><img src="<%= imgDetails[0].path.slice(23, 56) %>" alt="#"></a>
+                <a href="#"><img src="<%= imgDetails[i+1].path.slice(23, 56) %>" alt="#"></a>
             </div>
             
             <div class="discWrapper">
-                <h4><%=brand%></h4>
-                <h2><%=title%></h2>
-                <h2><%=price%> &#8364;</h2>
+                <h4><%=brand[i]%></h4>
+                <h2><%=title[i+1]%></h2>
+                <h2><%=price[i].replace(".",",")%> &#8364;</h2>
             </div>
         </div>
             <div class="fWrapper">
-                    <div id="listWrapper" class="allwr">
+                    <div id="listWrapper">
                             <select name="sizes" id="sizesPicker">
                                 <option value="NULL">Größe Wählen</option>
-                                <% sizes.forEach((val)=>{ %>
-                                <option value="<%=val%>"><%=val%></option>
-                                <% }) %>
+                                
+                                <option value="<%=sizes[i]%>"><%=sizes[i]%></option>
+                              
                             </select>
                         </div>
                         <div id="addToCart">

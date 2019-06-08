@@ -44,13 +44,14 @@ html {
 
         }
     }
-    .allwr{
-        margin-left: 5%;
+    .titleW{
+        width: 50%;
+        margin: 5% 5% 0 5%;
     }
 
+
     .discWrapper{
-      margin-top: 5%;
-      margin-bottom: 5%;
+        margin: 5%;
 
         & h4{
             margin-bottom: 2%;
@@ -79,11 +80,14 @@ html {
         width:100%;
         display: flex;
         align-items: center;
+        margin:5%;
 
             .tWrapper{
+               
                 & img{
+
                     width:20vh;
-                    margin-right: 2vw;
+                    
 
                 }
             }
@@ -92,8 +96,8 @@ html {
     .fWrapper{
         display: flex;
         justify-content: space-between;
-        margin-right: 5%;
-        margin-bottom: 5%;
+        margin: 0 5% 0 5%;
+       
         #listWrapper {
             outline: none;
             width: 40vw;
@@ -119,6 +123,9 @@ html {
                 color: #FFFFFF;
             }
         }
+    }
+    .fWrapper:last-child{
+        margin-bottom: 5%;
     }
 
 
