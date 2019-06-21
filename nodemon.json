@@ -19,6 +19,7 @@
       "controllers/productPageB.js",
       "controllers/productPageC.js",
       "public/style/main.css",
+      "public/js/homepage.js",
       "controllers/readingServingData.js",
       "views/productPage.ejs"
     ],

@@ -63,12 +63,14 @@ html {
   .carussel {
     width: 100vw;
     height: 80vh;
+    overflow: hidden;
   }
   .carussel #carusselImg {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     height: 100%;
+    position: relative;
   }
   .carussel #carusselImg a {
     width: 100%;
