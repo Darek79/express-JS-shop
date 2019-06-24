@@ -7,6 +7,8 @@ const p = path.join(__dirname, "..", "katalog", "carusselData.json");
 exports.productPageC = async (req, res) => {
     const t = req.params.title;
     const ind = req.params.ind;
+    const url = req.originalUrl;
+    
 
     const readData = util.promisify(fs.readFile);
 
@@ -16,9 +18,6 @@ exports.productPageC = async (req, res) => {
         return Promise.resolve([dataJSON[ind]]);
     }
     const prodData = await readJSON();
-    // console.log(prodData[0].title);
-    // console.log(prodData[0].sizes)
-
 
     const title = await prodData[0].title;
     const sizes = await prodData[0].sizes;
@@ -26,13 +25,12 @@ exports.productPageC = async (req, res) => {
     const price = await prodData[0].price;
     const imgDetails =await prodData[0].imgDetails;
     
-    console.log(title.length);
-
     res.render("productPage", {
         title,
         sizes,
         brand,
         price,
-        imgDetails
+        imgDetails,
+        url
     });
 }

@@ -24,7 +24,7 @@ exports.productPageB = async (req, res) => {
     const tprice = await prodData[0].price;
     const price =  await tprice[0].replace(".",",");
     const imgDetails = await prodData[0].imgDetails;
-    console.log(title.length);
+
 
     res.render("productPage", {
         title,

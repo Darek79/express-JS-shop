@@ -21,7 +21,7 @@ const anime = require('animejs/lib/anime.js');
 //     });
 // };
 
-let string = "D:\\dk_weatherAPP\\katalog\\img\\FP021E04Z-A11_1559477163889"
+// let string = "D:\\dk_weatherAPP\\katalog\\img\\FP021E04Z-A11_1559477163889"
 
-console.log(string.substring(29,45))
+// console.log(string.substring(29,45))
 

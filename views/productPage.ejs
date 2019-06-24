@@ -1,79 +1,52 @@
 <%- include("./includes/head.ejs") %>
+<title>"<%=url%>"</title>
 <link rel="stylesheet" href="/style/prodPage.css">
-
+<script src="/js/productPage.js" defer></script>
 </head>
 
 <body>
     <div class="header">
         <%- include("./includes/header.ejs") %>
     </div>
-    <% if(title.length <= 1) { %>
     <div id="mPicWrapper">
-        <% imgDetails.forEach((val)=>{ %>
-        <a href="#"><img src="<%= val.path.slice(23, 56) %>" alt="#"></a>
-        <% }) %>
+        <a href="#"><img src="<%= imgDetails[0].path.slice(23, 56) %>" alt="#"></a>
     </div>
-    <div class="discWrapper allwr">
-        <h4><%=brand%></h4>
-        <h2><%=title%></h2>
-        <h2><%=price%> &#8364;</h2>
+    <div class="titleW">
+        <h2><%=title[0]%></h2>
+    </div>
+    <% brand.forEach((val,i)=>{ %>
+
+    <div class="lookW">
+        <div class="tWrapper">
+            <a href="#"><img src="<%= imgDetails[i+1].path.slice(23, 56) %>" alt="#"></a>
+        </div>
+
+        <div class="discWrapper">
+            <h4><%=brand[i]%></h4>
+            <h2><%=title[i+1]%></h2>
+            <h2><%=price[i].replace(".",",")%> &#8364;</h2>
+        </div>
     </div>
     <div class="fWrapper">
-            <div id="listWrapper" class="allwr">
-                    <select name="sizes" id="sizesPicker">
-                        <option value="NULL">Größe Wählen</option>
-                        <% sizes.forEach((val)=>{ %>
-                        <option value="<%=val%>"><%=val%></option>
-                        <% }) %>
-                    </select>
-                </div>
-                <div id="addToCart">
-                        <form action="/addToCart" id="sizepicker">
-                        <input type="hidden" id="custId" name="custId" value="3487">
-                        <input id="add" type="submit" value="In den Warenkorb">
-                        </form>
-                </div>
-    </div>
-    <% } else { %>
-       
-        <div id="mPicWrapper">
-                <a href="#"><img src="<%= imgDetails[0].path.slice(23, 56) %>" alt="#"></a>
-            </div>
-            <div class="titleW">
-                    <h2><%=title[0]%></h2>
-            </div>
-            <% brand.forEach((val,i)=>{ %>
+        <div id="listWrapper">
+            <select name="sizes" id="sizesPicker">
+                <option value="NULL">Größe Wählen</option>
 
-            <div class="lookW">
-            <div class="tWrapper">
-                <a href="#"><img src="<%= imgDetails[i+1].path.slice(23, 56) %>" alt="#"></a>
-            </div>
-            
-            <div class="discWrapper">
-                <h4><%=brand[i]%></h4>
-                <h2><%=title[i+1]%></h2>
-                <h2><%=price[i].replace(".",",")%> &#8364;</h2>
-            </div>
+                <option value="<%=sizes[i]%>"><%=sizes[i]%></option>
+
+            </select>
         </div>
-            <div class="fWrapper">
-                    <div id="listWrapper">
-                            <select name="sizes" id="sizesPicker">
-                                <option value="NULL">Größe Wählen</option>
-                                
-                                <option value="<%=sizes[i]%>"><%=sizes[i]%></option>
-                              
-                            </select>
-                        </div>
-                        <div id="addToCart">
-                                <form action="/addToCart" id="sizepicker">
-                                <input type="hidden" id="custId" name="custId" value="3487">
-                                <input id="add" type="submit" value="In den Warenkorb">
-                                </form>
-                        </div>
-            </div>
-            <% }) %>
-            <% } %>
+        <div id="addToCart">
+            <button class="add" data-title="<%=title[i+1]%>" data-price="<%=price[i]%>" type="submit">In den Warenkorb</button>
+        </div>
+    </div>
+    <% }) %>
+
 
 </body>
 
 </html>
+
+
+<input  type="submit" value="In den Warenkorb">
+
