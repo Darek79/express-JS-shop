@@ -15,9 +15,19 @@ const adminRoutes = require("./routes/adminRoute");
 const app = express();
 app.use(helmet());
 
+app.use((req,res,next)=>{
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.setHeader('Access-Control-Allow-Methods',
+  'GET,POST');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type,Authorization');
+  next();
+
+})
+
 const port = process.env.PORT || 3000;
 
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
 const storage = multer.diskStorage({
   destination: (req,file,cb)=>{

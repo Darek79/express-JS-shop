@@ -1,22 +1,22 @@
 const btn = document.querySelectorAll(".add");
-let t,p;
-let cnt = 0;
-btn.forEach((val,i)=>{
+let t,p,i;
+btn.forEach((val)=>{
 val.addEventListener("click",(e)=>{
-    cnt++;
-    console.log(cnt);
+
     e.preventDefault();
      t = val.getAttribute("data-title");
      p = val.getAttribute("data-price");
+     i = val.getAttribute("data-img");
 
-     fetch("http://localhost:3000/addToCart",{
+     fetch("/addToCart",{
          method: "POST",
          body: JSON.stringify({
              t,
-             p
+             p,
+             i
          }),
          headers:{
-             "Content-Type": "application/x-www-form-urlencoded"
+             "Content-Type": "application/json"
          }
      });
 

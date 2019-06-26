@@ -37,7 +37,9 @@
             </select>
         </div>
         <div id="addToCart">
-            <button class="add" data-title="<%=title[i+1]%>" data-price="<%=price[i]%>" type="submit">In den Warenkorb</button>
+            <button class="add" data-title="<%=title[i+1]%>" data-price="<%=price[i]%>" 
+            data-img="<%= imgDetails[0].path.slice(23, 56) %>"    
+            type="submit">In den Warenkorb</button>
         </div>
     </div>
     <% }) %>
