@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
+const read = require("./getCartData");
 const prodPath = path.join(__dirname, "..", "katalog", "ProductData.json");
 const carusPath = path.join(__dirname, "..", "katalog", "carusselData.json");
 
@@ -10,6 +11,11 @@ exports.loadFrontPics = async (req, res) => {
     const dataRead = util.promisify(fs.readFile);
     const sliderPics = util.promisify(fs.readFile);
 
+    const cartFiles = await read.getCartData;
+    const cartJSON = JSON.parse(cartFiles);
+    (async()=>{
+        console.log(await cartJSON);
+    })();
     const fileReadP = async () => {
         const data = await dataRead(prodPath, "utf8");
         return JSON.parse(data);
