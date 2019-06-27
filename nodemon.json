@@ -19,6 +19,7 @@
       "controllers/frontPagePics.js",
       "controllers/productPageB.js",
       "controllers/productPageC.js",
+      "controllers/getCartData.js",
       "public/style/main.css",
       "public/js/homepage.js",
       "controllers/readingServingData.js",

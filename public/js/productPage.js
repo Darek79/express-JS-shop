@@ -1,5 +1,10 @@
 const btn = document.querySelectorAll(".add");
+const cN = document.getElementById("cartNr");
+const cart = document.getElementById("cart");
+
 let t,p,i;
+let res;
+
 btn.forEach((val)=>{
 val.addEventListener("click",(e)=>{
 
@@ -18,10 +23,18 @@ val.addEventListener("click",(e)=>{
          headers:{
              "Content-Type": "application/json"
          }
-     });
+     })
+     .then(res => res.json())
+     .then((resData) => {
+        cN.innerHTML = resData.cartFiles.length; 
+        res = Promise.resolve(resData.cartFiles);
+        })
+     .catch(err => console.log(err));
 
 })
 
-})
+});
 
-
+cart.addEventListener("click",()=>{
+    console.log(res);
+});

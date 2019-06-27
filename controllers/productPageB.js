@@ -1,11 +1,13 @@
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
+const readCart = require("./getCartData");
 const prodPath = path.join(__dirname, "..", "katalog", "ProductData.json");
 
 exports.productPageB = async (req, res) => {
     const t = req.params.title;
     const ind = req.params.ind;
+    const url = req.originalUrl;
 
     const readData = util.promisify(fs.readFile);
 
@@ -15,6 +17,8 @@ exports.productPageB = async (req, res) => {
         return Promise.resolve([dataJSON[ind]]) ;
                    
     }
+
+    const cartJSON = await readCart.cartData();
 
     const prodData = await getData();
 
@@ -31,7 +35,9 @@ exports.productPageB = async (req, res) => {
         sizes,
         brand,
         price,
-        imgDetails
+        imgDetails,
+        url,
+        cartJSON
     });
 
 

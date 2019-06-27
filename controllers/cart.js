@@ -35,6 +35,7 @@ exports.addToCart = async (req, res) => {
     };
 
     const cartFiles = await readCart();
+    
 
     res.status(201).json({
         message: "cart updated",

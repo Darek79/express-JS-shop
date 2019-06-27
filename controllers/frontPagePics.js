@@ -1,26 +1,23 @@
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
-const read = require("./getCartData");
+const readCart = require("./getCartData");
 const prodPath = path.join(__dirname, "..", "katalog", "ProductData.json");
 const carusPath = path.join(__dirname, "..", "katalog", "carusselData.json");
-
+let nr = 0;
 
 exports.loadFrontPics = async (req, res) => {
 
     const dataRead = util.promisify(fs.readFile);
     const sliderPics = util.promisify(fs.readFile);
 
-    const cartFiles = await read.getCartData;
-    const cartJSON = JSON.parse(cartFiles);
-    (async()=>{
-        console.log(await cartJSON);
-    })();
     const fileReadP = async () => {
         const data = await dataRead(prodPath, "utf8");
         return JSON.parse(data);
     }
     const data = await fileReadP();
+
+    const cartJSON = await readCart.cartData();
 
     const prodPics = await data.map((val, i) => {
         if (i <= 4) {
@@ -54,7 +51,8 @@ exports.loadFrontPics = async (req, res) => {
         slidePics,
         prodPics,
         prodPageC: "/prodPageC",
-        prodPage: "/prodPageB"
+        prodPage: "/prodPageB",
+        cartJSON
     })
 
 };

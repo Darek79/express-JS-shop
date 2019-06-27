@@ -1,28 +1,30 @@
-
 <div id="headerWrapper">
-        <a href="/">Logo</a>
+    <a href="/">Logo</a>
 
-        <div class="formWrapper">
+    <div class="formWrapper">
         <form action="/katalog" class="homeForm">
             <input id="searchInp" type="search" autocomplete="off" spellcheck="false" name="q" placeholder="Suche">
         </form>
-    
+
     </div>
-        <a id="ham" href="/sidebar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"viewBox="10 -70 100 140" preserveAspectRatio="xMidYMid meet" >
-                <path d="M0 2h120" id="a" stroke-width="8" stroke="#212121" />
-                <path d="M0 26h120" id="b" stroke-width="8" stroke="#212121" />
-                <path d="M0 50h120" id="c" stroke-width="8" stroke="#212121" />
-            </svg>
-        </a>
+    <div id="cart">
+        <svg width="20" height="20" viewBox="0 0 72.29 70">
+            <g fill="none" stroke="#212121" stroke-miterlimit="10" stroke-width="6">
+                <path
+                    d="M10 68h52c5.4 0 9.36-3.84 8.05-7.81L62.62 14h-53L2.27 60.4C.93 64.24 4.75 68 10 68zM48.62 14.5a12.5 12.5 0 0 0-25 0" />
+            </g>
+            <%if (cartJSON.length >0) {%>
+            <text id="cartNr" transform="translate(24.12 53.53)" font-size="40"><%=cartJSON.length%></text>
+            <%}%>
+        </svg>
+    </div>
+
+    <a id="ham" href="/sidebar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="10 -70 100 140"
+            preserveAspectRatio="xMidYMid meet">
+            <path d="M0 2h120" id="a" stroke-width="8" stroke="#212121" />
+            <path d="M0 26h120" id="b" stroke-width="8" stroke="#212121" />
+            <path d="M0 50h120" id="c" stroke-width="8" stroke="#212121" />
+        </svg>
+    </a>
 </div>
-
-<!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"viewBox="10 -70 100 140" preserveAspectRatio="xMidYMid meet" >
-    <path d="M0 2h120" id="a" stroke-width="8" stroke="#212121" />
-    <path d="M0 26h120" id="b" stroke-width="8" stroke="#212121" />
-    <path d="M0 50h120" id="c" stroke-width="8" stroke="#212121" />
-</svg> -->
-
-
-    
-
