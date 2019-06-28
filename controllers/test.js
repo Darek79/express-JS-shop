@@ -1,18 +1,18 @@
 
+let s = "adarek";
 
-const str = "124.99"
 
-// obj.forEach((val,i)=>{
-//     console.log(val.title[i]);
-//     console.log(val.sizes.toString());
-//     console.log(val.brand.toString());
-//     console.log(val.price.toString());
-//     console.log(val.imgDetails);
+const checkStr =(str)=>{
+    const arr = str.split("");
+    for(let i=0;i<arr.length;i++){
+        for(let y=i+1;y<arr.length;y++){
+            if(arr[i]===arr[y]){
+                console.log(arr[i]);
+                return arr[i];
+            }
+        }
+    }
 
-// })
+}
 
-const newStr = str.replace(".",",");
-console.log(newStr)
-// arr.forEach((val,i)=>{
-//     console.log(val)
-// })
+console.log(checkStr(s));

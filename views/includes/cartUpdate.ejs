@@ -1,0 +1,18 @@
+<div id="cartUpdate">
+
+        <div id="addedCart">
+                <p>WARENKORB</p>
+                <svg width="20" height="20" viewBox="0 0 72.29 70">
+                    <g fill="none" stroke="#212121" stroke-miterlimit="10" stroke-width="6">
+                        <path
+                            d="M10 68h52c5.4 0 9.36-3.84 8.05-7.81L62.62 14h-53L2.27 60.4C.93 64.24 4.75 68 10 68zM48.62 14.5a12.5 12.5 0 0 0-25 0" />
+                    </g>
+                    <%if (cartJSON.length >0) {%>
+                    <text class="cartNr" transform="translate(24.12 53.53)" font-size="40"><%=cartJSON.length%></text>
+                    <%}%>
+                </svg>
+            </div>
+            <a class="cartLink" href="#">zur Kasse</a>
+            <a class="cartLink" href="/cartView">zum Warenkorb</a>
+
+</div>

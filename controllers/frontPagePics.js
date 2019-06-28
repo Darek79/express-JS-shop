@@ -4,7 +4,7 @@ const util = require("util");
 const readCart = require("./getCartData");
 const prodPath = path.join(__dirname, "..", "katalog", "ProductData.json");
 const carusPath = path.join(__dirname, "..", "katalog", "carusselData.json");
-let nr = 0;
+
 
 exports.loadFrontPics = async (req, res) => {
 

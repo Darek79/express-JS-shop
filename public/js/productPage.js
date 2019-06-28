@@ -1,7 +1,10 @@
 
 const btn = document.querySelectorAll(".add");
-const cN = document.getElementById("cartNr");
+const cN = document.querySelectorAll(".cartNr");
 const cart = document.getElementById("cart");
+const cartUp = document.getElementById("cartUpdate");
+
+console.log(cN);
 
 let t, p, i,resData;
 
@@ -26,21 +29,44 @@ btn.forEach((val) => {
                 }
             })
             resData = await resp.json();
-            cN.innerHTML = resData.cartFiles.length;
+            cartUp.style.position = "fixed";
+            cN.forEach((val)=>{
+                val.innerHTML = resData.cartFiles.length;
+            })
+            animD();
             
-
-
         })
 
 
     });
 
 cart.addEventListener("click", async() => {
-    const resp = await fetch("/getCart");
-    const resData = await resp.json();
-    console.log(resData.cartJSON);
-    
-    resData.cartJSON.forEach((val)=>{
-        console.log(val);
-    })
+    cartUp.style.position = "fixed";
+    animD();
+
 });
+
+const animD =()=>{
+    let clear;
+    const tl = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 750
+    });
+    tl.add({
+        targets: "#cartUpdate",
+        top: "0",
+        easing: "easeInOutCirc",
+        endDelay: 1000,
+        complete: (a)=>{
+            if(a.completed){
+                clear = setTimeout(()=>{
+                    cartUp.style.position = "";
+                    cartUp.style.top= "-22vh"
+                },2000)
+                
+            }
+        }
+    })
+    clearTimeout(clear);
+}
+

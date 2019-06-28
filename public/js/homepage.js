@@ -3,7 +3,51 @@
 const catWrapper = document.getElementById("catWrapper");
 const txt = document.querySelector(".cText");
 const carusselImg = document.getElementById("carusselImg");
+const cart = document.getElementById("cart");
+const cartUp = document.getElementById("cartUpdate");
 const w = window.innerWidth;
+
+
+cart.addEventListener("click", async() => {
+    // const resp = await fetch("/getCart");
+    // const resData = await resp.json();
+    // console.log(resData.cartJSON);
+    
+    // resData.cartJSON.forEach((val)=>{
+    //     console.log(val);
+    // })
+    cartUp.style.position = "fixed";
+    cartUp.style.zIndex = "5";
+    animD();
+
+});
+
+const animD =()=>{
+    let clear;
+    const tl = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 750
+    });
+    tl.add({
+        targets: "#cartUpdate",
+        top: "0",
+        easing: "easeInOutCirc",
+        endDelay: 1000,
+        complete: (a)=>{
+            if(a.completed){
+                clear = setTimeout(()=>{
+                    cartUp.style.position = "";
+                    cartUp.style.top= "-22vh"
+                    cartUp.style.zIndex = "";
+                },2000)
+                
+            }
+        }
+    })
+    clearTimeout(clear);
+}
+
+
 
 class TouchMove {
     constructor(wX,el,sw,sl,slW) {
