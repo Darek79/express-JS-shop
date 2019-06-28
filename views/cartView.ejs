@@ -1,0 +1,26 @@
+<%- include("./includes/head.ejs") %>
+<title>"<%=url%>"</title>
+<link rel="stylesheet" href="/style/cartView.css">
+<!-- <script src="/js/productPage.js" defer></script> -->
+</head>
+</head>
+
+<body>
+    <div class="header">
+        <%- include("./includes/header.ejs") %>
+    </div>
+    <% cartJSON.forEach((val)=>{ %>
+    <div class="prodWrapper">
+        <div class="mPicWrapper">
+            <a href="<%=val.u%>"><img src="<%=val.i%>" alt="<%=val.t%>"></a>
+        </div>
+        <div class="descWrapper">
+            <p><%=val.t%></p>
+            <p><%=val.p.replace(".",",")%> &#8364</p>
+        </div>
+    </div>
+  
+    <%})%>
+</body>
+
+</html>

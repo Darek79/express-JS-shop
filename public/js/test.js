@@ -76,3 +76,15 @@
 // console.log(word);
 
 
+let arr = [ { t: 'GEO FLIPPY DRESS',
+    p: '124.99',
+    i: '\\img\\9db22a66b0294_1559674581418',
+    d: '2019-06-27T20:35:13.302Z' },
+  { t: 'Sonnenbrille - blackftrends',
+    p: '194.95',
+    i: '\\img\\A1.jpeg_1559672456566',
+    d: '2019-06-28T17:41:24.050Z' } ];
+
+arr.forEach((val)=>{
+    console.log(val.t);
+})

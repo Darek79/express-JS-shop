@@ -1,4 +1,3 @@
-
 const btn = document.querySelectorAll(".add");
 const cN = document.querySelectorAll(".cartNr");
 const cart = document.getElementById("cart");
@@ -6,23 +5,25 @@ const cartUp = document.getElementById("cartUpdate");
 
 console.log(cN);
 
-let t, p, i,resData;
+let t, p, i,resData,u;
 
 
 btn.forEach((val) => {
     val.addEventListener("click", async(e) => {
-
+        console.log(val);
         e.preventDefault();
         t = val.getAttribute("data-title");
         p = val.getAttribute("data-price");
         i = val.getAttribute("data-img");
+        u = val.getAttribute("data-link");
      
          const resp = await fetch("/addToCart",{
                 method: "POST",
                 body: JSON.stringify({
                     t,
                     p,
-                    i
+                    i,
+                    u
                 }),
                 headers:{
                     "Content-Type": "application/json"
