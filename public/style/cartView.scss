@@ -51,6 +51,7 @@ html {
     height:20vh;
     display: flex;
     padding: 3%;
+    
 
     .mPicWrapper{
         height: 100%;
@@ -78,7 +79,44 @@ html {
             margin-left: 5%;
         }
     }
+    .trash{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        
+    }
+}
+#totalW{
+    width: 100vw;
+    height: 25vw;
+    padding: 0 3% 0 3%;
+   
+   
 
+    font-size: 18px;
+
+        #tot{
+            height: 50%;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            justify-content: space-between;
+            border: 2px solid rgba(33, 33, 33, 0.9);
+           
+        }
+         #pay{
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F15C36;
+            border:2px solid #F15C36;
+            
+             & a{
+                color: #feffff;
+            }
+
+        }
 }
 
 }

@@ -1,7 +1,7 @@
 <%- include("./includes/head.ejs") %>
 <title>"<%=url%>"</title>
 <link rel="stylesheet" href="/style/cartView.css">
-<!-- <script src="/js/productPage.js" defer></script> -->
+<script src="/js/cart.js" defer></script>
 </head>
 </head>
 
@@ -9,7 +9,7 @@
     <div class="header">
         <%- include("./includes/header.ejs") %>
     </div>
-    <% cartJSON.forEach((val)=>{ %>
+    <% cartJSON.forEach((val,i)=>{ %>
     <div class="prodWrapper">
         <div class="mPicWrapper">
             <a href="<%=val.u%>"><img src="<%=val.i%>" alt="<%=val.t%>"></a>
@@ -18,9 +18,29 @@
             <p><%=val.t%></p>
             <p><%=val.p.replace(".",",")%> &#8364</p>
         </div>
+        <div class="trash">
+                <svg width="20" height="20" data-i="<%=i%>" viewBox="0 0 82 87">
+                        <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="3">
+                          <path stroke-miterlimit="10" d="M23.5 85.5h35l18-63v-9h-71v9l18 63z"/>
+                          <path stroke-miterlimit="10" d="M1.5 17.5v-9h79V18"/>
+                          <path stroke-linejoin="round" d="M31.5 7.5v-6h18v6"/>
+                          <path stroke-miterlimit="10" d="M40.5 22v54M21.5 22.5l7 53M62.5 22.5l-10 53"/>
+                        </g>
+                      </svg>
+        </div>
+
     </div>
-  
     <%})%>
+    <div id="totalW">
+        <div id="tot">
+                <p>Gesamtsumme (inkl. MwSt.)</p>
+                <p><%=t.replace(".",",")%> &#8364%></p>
+        </div>
+        <div id="pay">
+            <a href="#">ZUR KASSE</a>
+        </div>
+        
+     </div>   
 </body>
 
 </html>

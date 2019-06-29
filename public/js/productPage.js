@@ -3,14 +3,11 @@ const cN = document.querySelectorAll(".cartNr");
 const cart = document.getElementById("cart");
 const cartUp = document.getElementById("cartUpdate");
 
-console.log(cN);
-
 let t, p, i,resData,u;
 
 
 btn.forEach((val) => {
     val.addEventListener("click", async(e) => {
-        console.log(val);
         e.preventDefault();
         t = val.getAttribute("data-title");
         p = val.getAttribute("data-price");

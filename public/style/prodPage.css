@@ -92,8 +92,8 @@ html {
   .header #headerWrapper .formWrapper .homeForm #searchInp {
     outline: none;
     text-align: center;
-    border: 2px solid #FFFFFF;
-    background-color: #FFFFFF;
+    border: 2px solid #feffff;
+    background-color: #feffff;
   }
   .titleW {
     width: 50%;
@@ -152,7 +152,7 @@ html {
   .fWrapper #listWrapper select {
     height: 6vh;
     width: 100%;
-    border: 2px solid white;
+    border: 2px solid #feffff;
   }
   .fWrapper #addToCart {
     width: 45vw;
@@ -165,7 +165,7 @@ html {
     outline: none;
     border: 2px solid #F15C36;
     font-weight: 900;
-    color: #FFFFFF;
+    color: #feffff;
   }
   .fWrapper:last-child {
     margin-bottom: 5%;

@@ -79,5 +79,51 @@ html {
     font-size: 20px;
     margin-left: 5%;
   }
+  .prodWrapper .trash {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #totalW {
+    width: 100vw;
+    height: 25vw;
+    padding: 0 3% 0 3%;
+    font-size: 18px;
+  }
+  #totalW #tot {
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: bold;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border: 2px solid rgba(33, 33, 33, 0.9);
+  }
+  #totalW #pay {
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #F15C36;
+    border: 2px solid #F15C36;
+  }
+  #totalW #pay a {
+    color: #feffff;
+  }
 }
 /*# sourceMappingURL=cartView.css.map */

@@ -20,6 +20,7 @@
       "controllers/frontPagePics.js",
       "controllers/productPageB.js",
       "controllers/productPageC.js",
+      "controllers/deleteProductCart.js",
       "controllers/test.js",
       "controllers/getCartData.js",
       "public/style/main.css",

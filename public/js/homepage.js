@@ -66,8 +66,6 @@ class TouchMove {
             this.startX = parseInt(ev.touches[0].clientX);
             this.startY = parseInt(ev.touches[0].clientY);
             this.start = true;
-            
-            console.log(this.maxScroll); 
         })
         
     }
