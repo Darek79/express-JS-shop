@@ -1,13 +1,14 @@
-const prodWrapper = document.querySelectorAll(".prodWrapper");
-const trash = document.querySelectorAll(".trash svg");
+const trash = document.querySelectorAll(".trash");
 const cN = document.querySelectorAll(".cartNr");
+const s = document.querySelector("#tot p:nth-child(2)");
+console.log(s);
 
 let resData,dI;
 
 trash.forEach((val)=>{
     val.addEventListener("click",async(e)=>{
 
-         dI = val.getAttribute("data-i");
+         dI = val.getAttribute("data-t");
 
        const resp = await fetch("/deleteItem",{
             method: "POST",
@@ -17,11 +18,17 @@ trash.forEach((val)=>{
             headers: {
                 "Content-Type": "application/json"
             }
-        })
+        });
+        
         resData = await resp.json();
+       
         cN.forEach((val)=>{
-            val.innerHTML = resData.cartFiles.length;
+            val.innerHTML = resData.cartF.length;
+            s.innerHTML = `${resData.totalS.replace(".",",")} &#8364`;
         })
+        const rN = e.target.parentElement.parentElement;
+        rN.parentNode.removeChild(rN);
+
     })
 })
 

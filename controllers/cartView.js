@@ -1,19 +1,12 @@
 const readCart = require("./getCartData");
+const actualV = require("../model/getTotalVal");
 
 exports.cartFiles =async(req,res)=>{
     const cartJSON = await readCart.cartData();
     const url = req.originalUrl;
 
-    const n = [];
-    cartJSON.forEach((val)=>{
-        if(val.p){
-            n.push(parseFloat(val.p));
-        }
-    });
-    const t = n.reduce((a,b)=>{
-        return a+b;
-    });
-   
-    res.render("cartView",{url,cartJSON,t:t.toString()})
+    const totalS = await actualV.totalVal(cartJSON);
+
+    res.render("cartView",{url,cartJSON,t:totalS})
 }
 
