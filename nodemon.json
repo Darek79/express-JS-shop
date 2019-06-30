@@ -22,6 +22,7 @@
       "controllers/productPageC.js",
       "controllers/deleteProductCart.js",
       "controllers/test.js",
+      "controllers/sidebar.js",
       "controllers/getCartData.js",
       "public/style/main.css",
       "public/js/homepage.js",

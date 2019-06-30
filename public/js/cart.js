@@ -1,7 +1,6 @@
 const trash = document.querySelectorAll(".trash");
 const cN = document.querySelectorAll(".cartNr");
 const s = document.querySelector("#tot p:nth-child(2)");
-console.log(s);
 
 let resData,dI;
 

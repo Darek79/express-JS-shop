@@ -1,0 +1,27 @@
+#sidebarW{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    // left:-100vw;
+    background-color: #F15C36;
+
+    #topics{
+        height: 15vh;
+        width: 100vw;
+        display: flex;
+        align-items: flex-end;
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: cover;
+       
+         & p{
+             color: #feffff;
+             margin: 0 0 3% 5%;
+             padding: 1%;
+             background-color: rgba(179, 179, 179,0.8);
+         }
+         
+    }
+
+   }

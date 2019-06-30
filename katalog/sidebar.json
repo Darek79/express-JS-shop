@@ -1,0 +1,105 @@
+{
+    "damen": [{
+        "backImg": "\\imgSide\\women-s2.jpg"
+    }, {
+        "links": [{
+                "title": "get the look"
+            },
+            {
+                "title": "neu"
+            },
+            {
+                "title": "bekleidung"
+            },
+            {
+                "title": "schuche"
+            },
+            {
+                "title": "sport"
+            },
+            {
+                "title": "accessoires"
+            },
+            {
+                "title": "beauty"
+            },
+            {
+                "title": "premium"
+            },
+            {
+                "title": "marken"
+            },
+            {
+                "title": "sale %"
+            }
+        ]
+    }],
+    "herren": [{
+        "backImg": "\\imgSide\\men-s2.jpg"
+    }, {
+        "links": [{
+                "title": "get the look"
+            },
+            {
+                "title": "neu"
+            },
+            {
+                "title": "bekleidung"
+            },
+            {
+                "title": "schuche"
+            },
+            {
+                "title": "sport"
+            },
+            {
+                "title": "accessoires"
+            },
+            {
+                "title": "pflege"
+            },
+            {
+                "title": "premium"
+            },
+            {
+                "title": "marken"
+            },
+            {
+                "title": "sale %"
+            }
+        ]
+    }],
+
+    "kinder": [{
+        "backImg": "\\imgSide\\kids-s2.jpg"
+    }, {
+        "links": [{
+                "title": "inspiration"
+            },
+            {
+                "title": "bekleidung"
+            },
+            {
+                "title": "schuche"
+            },
+            {
+                "title": "sport"
+            },
+            {
+                "title": "accessoires"
+            },
+            {
+                "title": "wäsche"
+            },
+            {
+                "title": "premium"
+            },
+            {
+                "title": "marken"
+            },
+            {
+                "title": "sale %"
+            }
+        ]
+    }]
+}
