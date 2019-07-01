@@ -37,7 +37,8 @@
     "herren": [{
         "backImg": "\\imgSide\\men-s2.jpg"
     }, {
-        "links": [{
+        "links": [
+            {
                 "title": "get the look"
             },
             {
@@ -73,7 +74,11 @@
     "kinder": [{
         "backImg": "\\imgSide\\kids-s2.jpg"
     }, {
-        "links": [{
+        "links": [
+            {
+                "title": "get the look"
+            },
+            {
                 "title": "inspiration"
             },
             {

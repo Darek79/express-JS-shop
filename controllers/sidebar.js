@@ -4,10 +4,14 @@ exports.getSidebarData = async(req,res)=>{
     const categ = await req.body.cat;
     const def = await req.body.def;
 
-    let data = def === "def"?sideData.damen:sideData[categ];
+    const data = def === "def"?sideData.damen:sideData[categ];
+
+    const [{backImg}] = data
+    const links = data[1].links;
     
     res.status(200).json({
-        dataItem: data
+        backImg,
+        links
     })
 
 }
